@@ -1,0 +1,14 @@
+import requests
+import json
+
+
+url_maint = 'http://ip:8091/NorthStar/API/v2/tenant/1/topology/1/maintenances'
+headers = {'Authorization':'Bearer hvD/nDB85DbXiot9Q9WVBwUFH6mIsyW/T2HngD/iDYM=','Accept' : 'applicat
+ion/json', 'Content-Type' : 'application/json'}
+
+
+
+def create_node_maintenance():
+    contents = open('node_maintenance.json', 'rb').read()
+    print(contents)
+    r = requests.post(url_maint, data=contents, headers=headers, verify=False)
